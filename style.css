@@ -14,9 +14,25 @@
  }
 }
 
+@keyframes typing {
+ from {
+  width: 0
+ }
+
+ to {
+  width: 100%
+ }
+}
+
 :root {
  font-size: 62.5%;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.center {
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 body {
@@ -32,33 +48,22 @@ p {
 }
 
 main {
- display: flex;
  flex-direction: column;
- align-items: center;
 }
 
 .photo {
  width: 65%;
+ height: auto;
  max-width: 20em;
  border-radius: 50%;
  margin-bottom: 1rem;
-}
-
-@keyframes typing {
- from {
-  width: 0
- }
-
- to {
-  width: 100%
- }
 }
 
 .title {
  margin: 0;
  overflow: hidden;
  white-space: nowrap;
- animation: typing 1.3s steps(40, end);
+ animation: typing 0.6s steps(40, end);
  text-align: center;
 }
 
@@ -70,14 +75,13 @@ main {
 }
 
 .contact {
- display: flex;
  flex-direction: row;
- justify-content: center;
 }
 
 ion-icon {
- pointer-events: none; /* Remove the tooltip due to can't change title */
- font-size: 2.3rem;
+ /* Remove the tooltip due to can't change title */
+ pointer-events: none;
+ font-size: 3.2rem;
  color: var(--icons);
  margin: 0.3rem;
 }
