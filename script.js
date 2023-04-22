@@ -2,10 +2,10 @@ const contacts = document.querySelector("div.contact");
 const link = (title, url, icon) => ({ title, url, icon });
 
 const links = [
-  link("Github", "https://github.com/dheisom", "logo-github"),
-  link("Instagram", "https://instagram.com/dheison.dev", "logo-instagram"),
-  link("Telegram", "https://t.me/dheisom", "paper-plane-outline"),
-  link("Tabnews", "https://www.tabnews.com.br/dheisom", "folder-outline"),
+  link("Github", "https://github.com/dheison0", "logo-github"),
+  link("Instagram", "https://instagram.com/dheison0", "logo-instagram"),
+  link("Telegram", "https://t.me/dheison0", "paper-plane-outline"),
+  link("Tabnews", "https://www.tabnews.com.br/dheison0", "folder-outline"),
   link("E-mail", "mailto:dheisomgomes0@gmail.com", "mail-outline"),
 ];
 
