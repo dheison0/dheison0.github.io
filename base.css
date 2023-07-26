@@ -1,0 +1,28 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --icons: black;
+    --post-container: #cfcadd78;
+    --text-color: #333;
+    color: var(--text-color);
+    background-color: #FFF;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icons: white;
+    --post-container: #44475a;
+    --text-color: #f8f8f2;
+    color: var(--text-color);
+    background-color: #282a36;
+  }
+}
+
+main {
+  margin-top: 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  text-align: left;
+}
