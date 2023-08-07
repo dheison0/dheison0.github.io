@@ -9,9 +9,13 @@ const links = [
   link("E-mail", "mailto:dheisomgomes0@gmail.com", "mail-outline"),
 ];
 
-links.map((item) => {
-  var element = `<a href="${item.url}" alt="${item.title}">`;
-  element += `<ion-icon name="${item.icon}" aria-hidden="true"></ion-icon>`;
-  element += `</a>`;
-  contacts.innerHTML += element;
-})
+function onLoad() {
+  const linksComponent = links.map((item) => `
+    <a href="${item.url}" alt="${item.title}">
+      <ion-icon name="${item.icon}" aria-hidden="true"></ion-icon>
+    </a>
+  `);
+  contacts.innerHTML = linksComponent.join("\n");
+}
+
+onLoad();
