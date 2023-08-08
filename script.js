@@ -1,5 +1,5 @@
-const projectsContainer = document.querySelector("div.project-list");
-const contactsContainer = document.querySelector("div.contact");
+const projectsContainer = document.querySelector("div.project-list")
+const contactsContainer = document.querySelector("div.contact")
 
 const project = (title, description, url) => ({
   title, description, url,
@@ -22,7 +22,7 @@ const link = (title, url, icon) => ({
       </a>
     `
   }
-});
+})
 
 const links = [
   link("Github", "https://github.com/dheison0", "logo-github"),
@@ -30,7 +30,7 @@ const links = [
   link("Telegram", "https://t.me/dheison0", "paper-plane-outline"),
   link("Tabnews", "https://www.tabnews.com.br/dheison0", "folder-outline"),
   link("E-mail", "mailto:dheisomgomes0@gmail.com", "mail-outline"),
-];
+]
 
 const projects = [
   project(
@@ -56,8 +56,9 @@ const projects = [
 ]
 
 function onLoad() {
-  projectsContainer.innerHTML = projects.map(i => i.render()).join();
-  contactsContainer.innerHTML = links.map(i => i.render()).join();
+  const renderAll = a => a.map(i => i.render()).join('\n')
+  projectsContainer.innerHTML = renderAll(projects)
+  contactsContainer.innerHTML = renderAll(links)
 }
 
-onLoad();
+onLoad()
