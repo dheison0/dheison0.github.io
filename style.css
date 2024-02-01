@@ -54,6 +54,10 @@ main {
   padding-top: 1rem;
 }
 
+li {
+  list-style: none;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -88,6 +92,7 @@ main {
 .contact {
   flex-direction: row;
   padding: 2.5rem;
+  padding-top: 0.5rem;
 }
 
 ion-icon {
