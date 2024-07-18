@@ -3,7 +3,7 @@
     --icons: black;
     --text-color: #333;
     --borders: #444;
-    --project-hover: cyan;
+    --project-hover: rgb(196, 230, 230);
     background-color: whitesmoke;
   }
 }
@@ -83,7 +83,7 @@ li {
 
 .description {
   text-align: left;
-  max-width: 41rem;
+  max-width: 41.4rem;
   padding-left: 0.8rem;
   border-left: 0.45rem solid var(--borders);
   border-radius: 0.45rem;
@@ -103,7 +103,11 @@ ion-icon {
   margin: 0.3rem;
 }
 
-.informations-container {
+.contact-item {
+  margin: 0.1rem;
+}
+
+.information-container {
   flex-flow: row wrap;
 }
 

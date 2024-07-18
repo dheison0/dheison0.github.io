@@ -15,11 +15,11 @@ const link = (title, url, icon) => ({
   title, url, icon,
   render: function () {
     return `
-    <li>
-      <a href="${this.url}" alt="${this.title}">
+    <a class="contact-item" href="${this.url}" alt="${this.title}">
+      <li>
         <ion-icon name="${this.icon}" aria-hidden="true"></ion-icon>
-      </a>
-    </li>`
+      </li>
+    </a>`
   }
 })
 
@@ -33,14 +33,19 @@ const links = [
 
 const projects = [
   project(
+    "PS2 Game Manager",
+    "Um gerenciador de jogos para PS2 que rodam através de pendrive ou HDD externo usando o OPL",
+    "https://github.com/dheison0/ps2-game-manager"
+  ),
+  project(
+    "Audio Forward",
+    "Pequeno programa feito em Go para fazer streaming de audio de um sistema linux para outro usando o PulseAudio",
+    "https://github.com/dheison0/audio-forward"
+  ),
+  project(
     "Anna's Archive",
     "App não oficial do website Annas Archive criado usando React Native, possui algumas funcionalidades úteis.",
     "https://github.com/dheison0/annas-archive"
-  ),
-  project(
-    "Anna's Archive API",
-    "API não oficial do website Anna's Archive criado usando Python & BeautifulSoup4 para raspagem de dados.",
-    "https://github.com/dheison0/annas-archive-api"
   ),
   project(
     "Telegram Downloader",
