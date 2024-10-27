@@ -34,7 +34,7 @@ const links = [
 const projects = [
   project(
     "SubCreator",
-    "Programa de linha de comando criado para adicionar legendas automaticamente em vídeos curtos utilizando ollama(IA para tradução) e ffmpeg(editar o vídeo)",
+    "Programa de linha de comando criado para adicionar legendas automaticamente em vídeos curtos utilizando Google Tradutor, Whisper e FFmpeg",
     "https://github.com/dheison0/subcreator"
   ),
   project(
