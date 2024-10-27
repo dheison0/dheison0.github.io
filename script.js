@@ -1,9 +1,9 @@
 const project = (title, description, url) => ({
   title, description, url,
-  render: function() {
+  render: function () {
     return `
     <li>
-      <a class="project" href="${this.url}">
+      <a class="project" href="${this.url}" target="_blank">
         <h3>${this.title}</h3>
         <span>${this.description}</span>
       </a>
@@ -15,7 +15,7 @@ const link = (title, url, icon) => ({
   title, url, icon,
   render: function () {
     return `
-    <a class="contact-item" href="${this.url}" alt="${this.title}">
+    <a class="contact-item" href="${this.url}" alt="${this.title}" target="_blank">
       <li>
         <ion-icon name="${this.icon}" aria-hidden="true"></ion-icon>
       </li>
@@ -33,6 +33,11 @@ const links = [
 
 const projects = [
   project(
+    "SubCreator",
+    "Programa de linha de comando criado para adicionar legendas automaticamente em vídeos curtos utilizando ollama(IA para tradução) e ffmpeg(editar o vídeo)",
+    "https://github.com/dheison0/subcreator"
+  ),
+  project(
     "PS2 Game Manager",
     "Um gerenciador de jogos para PS2 que rodam através de pendrive ou HDD externo usando o OPL",
     "https://github.com/dheison0/ps2-game-manager"
@@ -41,11 +46,6 @@ const projects = [
     "Audio Forward",
     "Pequeno programa feito em Go para fazer streaming de audio de um sistema linux para outro usando o PulseAudio",
     "https://github.com/dheison0/audio-forward"
-  ),
-  project(
-    "Anna's Archive",
-    "App não oficial do website Annas Archive criado usando React Native, possui algumas funcionalidades úteis.",
-    "https://github.com/dheison0/annas-archive"
   ),
   project(
     "Telegram Downloader",
