@@ -16,6 +16,10 @@
     --project-hover: #44475a;
     background: #282a36;
   }
+
+  .icon {
+    filter: invert();
+  }
 }
 
 :root {
@@ -90,14 +94,12 @@ li {
 
 .contact {
   flex-direction: row;
-  padding: 2.5rem;
+  padding: 2rem;
   padding-top: 0.5rem;
 }
 
-ion-icon {
-  /* Remove the tooltip due to can't change title */
-  pointer-events: none;
-  font-size: 3.2rem;
+.icon {
+  width: 3.2rem;
   color: var(--icons);
   margin: 0.3rem;
 }

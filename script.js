@@ -1,34 +1,24 @@
-const project = (title, description, url) => ({
-  title, description, url,
-  render: function () {
-    return `
-    <li>
-      <a class="project" href="${this.url}" target="_blank">
-        <h3>${this.title}</h3>
-        <span>${this.description}</span>
-      </a>
-    </li>`
-  }
-})
+const project = (title, description, url) => (`
+  <li>
+    <a class="project" href="${url}" target="_blank">
+      <h3>${title}</h3>
+      <span>${description}</span>
+    </a>
+  </li>
+`)
 
-const link = (title, url, icon) => ({
-  title, url, icon,
-  render: function () {
-    return `
-    <a class="contact-item" href="${this.url}" alt="${this.title}" target="_blank">
-      <li>
-        <ion-icon name="${this.icon}" aria-hidden="true"></ion-icon>
-      </li>
-    </a>`
-  }
-})
+const link = (title, url, icon) => (`
+  <a class="contact-item" href="${url}" alt="${title}" target="_blank">
+    <img class="icon" src="img/icons/${icon}.svg" />
+  </a>
+`)
 
 const links = [
-  link("Reddit", "https://www.reddit.com/user/dheison0", "logo-reddit"),
-  link("Telegram", "https://t.me/dheison0", "paper-plane-outline"),
-  link("Github", "https://github.com/dheison0", "logo-github"),
-  link("Tabnews", "https://www.tabnews.com.br/dheison0", "folder-outline"),
-  link("E-mail", "mailto:dheisomgomes0@gmail.com", "mail-outline"),
+  link("Reddit", "https://www.reddit.com/user/dheison0", "reddit"),
+  link("Telegram", "https://t.me/dheison0", "telegram"),
+  link("Github", "https://github.com/dheison0", "github"),
+  link("Tabnews", "https://www.tabnews.com.br/dheison0", "tabnews"),
+  link("E-mail", "mailto:dheisomgomes0@gmail.com", "email"),
 ]
 
 const projects = [
@@ -59,11 +49,5 @@ const projects = [
   ),
 ]
 
-const renderAll = items => items.map(i => i.render()).join('\n')
-
-function onLoad() {
-  document.querySelector("ul.project-list").innerHTML = renderAll(projects)
-  document.querySelector("ul.contact").innerHTML = renderAll(links)
-}
-
-onLoad()
+document.querySelector("ul.project-list").innerHTML = projects.join("")
+document.querySelector("ul.contact").innerHTML = links.join("")
