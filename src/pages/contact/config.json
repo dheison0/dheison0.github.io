@@ -1,0 +1,36 @@
+{
+  "title":"Links de contato",
+  "description":"Aqui está os meus contatos mais importantes e faceis de me econtrar.",
+  "items": [
+    {
+      "title":"Telegram",
+      "description":"Minha rede de conversas favorita!",
+      "url":"https://t.me/dheison0",
+      "cover": "/assets/icons/telegram.svg"
+    },
+    {
+      "title":"Reddit",
+      "description":"Bora participar nas mesmas comunidades?",
+      "url":"https://reddit.com/u/dheison0",
+      "cover": "/assets/icons/reddit.svg"
+    },
+    {
+      "title":"Tabnews",
+      "description":"Tem mais conteúdo aqui se quiser ver ;)",
+      "url":"https://tabnews.com/dheison0",
+      "cover": "/assets/icons/tabnews.svg"
+    },
+    {
+      "title":"Github",
+      "description":"Que tal dar uma olhada nos meus projetinhos? :)",
+      "url":"https://github.com/dheison0",
+      "cover": "/assets/icons/github.svg"
+    },
+    {
+      "title":"E-Mail",
+      "description":"E uma conversa mais formal?",
+      "url":"mailto:dheisomgomes0@gmail.com",
+      "cover": "/assets/icons/email.svg"
+    }
+  ]
+}

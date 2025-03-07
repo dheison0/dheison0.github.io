@@ -1,0 +1,50 @@
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.3rem solid white;
+    border-radius: 0.7rem;
+  }
+
+  .icon {
+    width: 4.5rem;
+    filter: invert();
+    margin-right: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .description {
+    color: var(--link-normal-color);
+  }
+</style>
+
+<div class="container center">
+  <h1 class="title">Meus contatos:</h1>
+  <div>
+    {{range .Items }}
+    <a href='{{index . "url"}}' class="item">
+      <img src='{{index . "cover"}}' class="icon">
+      <div class="info center">
+        <h2 class="name">{{index . "title"}}</h2>
+        <span class="description">{{index . "description"}}</span>
+      </div>
+    </a>
+    {{end}}
+  </div>
+</div>
