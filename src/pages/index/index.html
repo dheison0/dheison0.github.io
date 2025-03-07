@@ -50,6 +50,11 @@
     flex-flow: row wrap;
   }
 
+  .project-container {
+    display: flex;
+    flex: 1;
+  }
+
   .project-list {
     flex: 1;
     display: flex;
@@ -98,15 +103,17 @@
     </p>
   </div>
 </div>
-<ul class="project-list">
-  {{ range .Items }}
-  <li>
-    <a href='{{ index . "url" }}' class="project">
-      <h3>{{ index . "title" }}</h3>
-      <span>{{ index . "description" }}</span>
-    </a>
-  </li>
-  {{ else }}
-  <span>A lista de projetos está vazia!</span>
-  {{ end }}
-</ul>
+<div class="project-container center">
+  <ul class="project-list">
+    {{ range .Items }}
+    <li>
+      <a href='{{ index . "url" }}' class="project">
+        <h3>{{ index . "title" }}</h3>
+        <span>{{ index . "description" }}</span>
+      </a>
+    </li>
+    {{ else }}
+    <span>A lista de projetos está vazia!</span>
+    {{ end }}
+  </ul>
+</div>
