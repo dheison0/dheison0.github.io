@@ -97,14 +97,14 @@ body {
   padding-top: 1rem;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  margin: 2rem;
-}
-
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }

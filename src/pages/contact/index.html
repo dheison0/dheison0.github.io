@@ -13,14 +13,24 @@
     flex-direction: row;
     margin: 1rem;
     padding: 1rem;
-    border: 0.3rem solid white;
+    border: 0.3rem solid var(--link-normal-color);
     border-radius: 0.7rem;
+  }
+
+  .item:hover {
+    cursor: hand;
+    background-color: var(--project-hover);
   }
 
   .icon {
     width: 4.5rem;
-    filter: invert();
     margin-right: 1rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .icon {
+      filter: invert();
+    }
   }
 
   .info {
