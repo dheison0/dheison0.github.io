@@ -1,12 +1,29 @@
 <style>
-pre {
-  padding: 1rem;
-  border-radius: 0.7rem;
-}
+  pre {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
 
-#content {
-  margin-inline: 1rem;
-}
+  pre span {
+    color: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    pre {
+      border: 0.5rem solid var(--project-hover);
+    }
+  }
+
+  #content {
+    margin-inline: 1rem;
+  }
+
+  .published {
+    color: #aaa;
+    margin: 2rem;
+  }
 </style>
 
 <div id="content">{{.Content}}</div>
+<div class="published center">Publicado em: {{.Date}}</div>
