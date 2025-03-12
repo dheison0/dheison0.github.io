@@ -1,0 +1,12 @@
+<div>
+  {{ if .Items }}
+    {{ range .Items }}
+      <a href='/posts/{{ index . "path" }}'>
+        <h3>{{ index . "title" }}</h3>
+        <span>{{ index . "date" }}</span>
+      </div>
+    {{ end }}
+  {{ else }}
+    <span>Nenhuma postagem ainda!</span>
+  {{ end }}
+</div>

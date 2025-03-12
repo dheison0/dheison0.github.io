@@ -77,8 +77,9 @@ func main() {
 			content, item := parsePost(path.Join(inputDir, "posts", post.Name()))
 			outputFileName := strings.ReplaceAll(post.Name(), ".md", ".html")
 			posts = append(posts, map[string]any{
-				"title":    item.Title,
-				"filename": outputFileName,
+				"title": item.Title,
+				"date":  item.Date,
+				"path":  outputFileName,
 			})
 			writeOutput(path.Join(outputDir, "posts", outputFileName), content)
 		}
