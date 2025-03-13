@@ -32,8 +32,9 @@ type Config struct {
 	Content     string
 }
 
-const inputDir = "./src"
-const outputDir = "./dist"
+var inputDir = "./src"
+var outputDir = "./dist"
+
 const styleName = "dracula" // Code hightlight color scheme
 
 var posts JSONItems
@@ -67,6 +68,12 @@ func init() {
 }
 
 func main() {
+	if os.Getenv("OUTPUT_DIR") != "" {
+		outputDir = os.Getenv("OUTPUT_DIR")
+	}
+	if os.Getenv("SOURCE_DIR") != "" {
+		inputDir = os.Getenv("SOURCE_DIR")
+	}
 	postDir, err := os.ReadDir(path.Join(inputDir, "posts"))
 	if err != nil {
 		log.Fatalf("failed to read posts dir")
