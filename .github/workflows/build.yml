@@ -27,13 +27,14 @@ jobs:
         - name: Compile website
           run: |
             INPUT_DIR=./src OUTPUT_DIR=/tmp/dist ./compiler
-            git checkout -B web
-            cp -r /tmp/dist/* .
+            
 
         - name: Commit changes
           run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
+            git checkout -B web
+            cp -r /tmp/dist/* .
             git add -A
             git commit -m "update: $(date +%m-%d-Y %H:%M:%S)"
         
@@ -41,4 +42,4 @@ jobs:
           uses: ad-m/github-push-action@master
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }}
+            branch: web
