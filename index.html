@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Um programador full-stake amante da raspagem de dados!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/favicon.svg" />
+  <title>Dheison Gomes</title>
+  <link async rel="stylesheet" href="/assets/style.css" />
+</head>
+
+<body>
+  <header class="header-bar">
+    <a href="/" class="main-link">
+      <img src="/assets/favicon.svg">
+      <h1>Dheison Gomes</h1>
+    </a>
+    <div class="menu">
+      <a href="posts.html">Postagens</a>
+      <a href="contact.html">Contatos</a>
+    </div>
+  </header>
+  <main class="root">
+    <style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem;
+  }
+
+  .photo {
+    margin: 1.5rem;
+    width: 68%;
+    height: auto;
+    max-width: 31rem;
+    min-width: 18rem;
+    border-radius: 50%;
+  }
+
+  .title {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 1.3rem;
+  }
+
+  .description {
+    text-align: left;
+    max-width: 41.4rem;
+    padding-left: 0.8rem;
+    border-left: 0.45rem solid var(--borders);
+    border-radius: 0.45rem;
+  }
+
+  .contact {
+    flex-direction: row;
+    padding: 2rem;
+    padding-top: 0.5rem;
+  }
+
+  .icon {
+    width: 3.2rem;
+    color: var(--icons);
+    margin: 0.3rem;
+  }
+
+  .contact-item {
+    margin: 0.1rem;
+  }
+
+  .information-container {
+    flex-flow: row wrap;
+  }
+
+  .project-container {
+    display: flex;
+    flex: 1;
+  }
+
+  .project-list {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center;
+    width: 85%;
+    max-width: 80rem;
+    margin-top: 2rem;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.8rem;
+    padding: 1rem;
+    border: 0.2rem solid var(--borders);
+    border-radius: 1rem;
+    max-width: 32rem;
+  }
+
+  .project:hover {
+    background-color: var(--project-hover);
+    cursor: hand;
+  }
+
+  .project h3 {
+    margin-bottom: 0.9rem;
+  }
+
+  .project span {
+    font-style: italic;
+  }
+</style>
+
+<div class="information-container center">
+  <img class="photo" src="/assets/photo.webp" alt="Uma foto minha">
+  <div class="about">
+    <h1 class="title">Dheison Gomes</h1>
+    <p class="description" alt="Pequena descrição sobre mim">
+      Olá! Sou o Dheison, um entusiasta da programação e do Linux que gosta muito de criar
+      API's, CLI's &amp; scripts para automações na minha maquina local e na nuvem. Estou
+      a procura de um emprego na área da programação, então se você deseja alguém com conhecimento
+      em Python, Go e Shell Script pode me chamar que sou a pessoa certa, os links de contato estão
+      no fim da página ;)
+    </p>
+  </div>
+</div>
+<div class="project-container center">
+  <ul class="project-list">
+    
+    <li>
+      <a href='https://github.com/dheison0/subcreator' class="project">
+        <h3>SubCreator</h3>
+        <span>Programa de linha de comando criado para adicionar legendas automaticamente em vídeos curtos utilizando Google Tradutor, Whisper e FFmpeg</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href='https://github.com/dheison0/ps2-game-manager' class="project">
+        <h3>PS2 Game Manager</h3>
+        <span>Um gerenciador de jogos para PS2 que rodam através de pendrive ou HDD externo usando o OPL</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href='https://github.com/dheison0/audio-forward' class="project">
+        <h3>Audio Forward</h3>
+        <span>Pequeno programa feito em Go para fazer streaming de audio de um sistema linux para outro usando o PulseAudio</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href='https://github.com/dheison0/telegram-downloader' class="project">
+        <h3>Telegram Downloader</h3>
+        <span>Bot para telegram útil para automatizar o download de arquivos enviados nos canais em que está inscrito.</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href='https://github.com/dheison0/scripts' class="project">
+        <h3>Scripts</h3>
+        <span>Aqui é onde eu salvo os scripts que automatizam meu sistema Linux :)</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  </main>
+  <footer class="footer">
+    Todos os direitos reservados © Dheison Gomes
+  </footer>
+</body>
+
+</html>
