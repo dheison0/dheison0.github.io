@@ -26,9 +26,9 @@ jobs:
         
         - name: Compile website
           run: |
-            INPUT_DIR=./src OUTPUT_DIR=/dist ./compiler
+            INPUT_DIR=./src OUTPUT_DIR=/tmp/dist ./compiler
             git checkout -B web
-            cp -r /dist/* .
+            cp -r /tmp/dist/* .
 
         - name: Commit changes
           run: |
