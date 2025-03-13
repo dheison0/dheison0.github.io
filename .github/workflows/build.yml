@@ -36,10 +36,10 @@ jobs:
             git fetch origin web || git checkout --orphan web
             git checkout web
             git reset --hard origin/web || echo "Branch doesn't exists on remote repository"
-            rm -rf *
+            rm -rf .github .vscode .gitignore *
             cp -r /tmp/dist/* .
             git add -A
-            git commit -m "update: $(date '+%m-%d-Y %H:%M:%S')"
+            git commit -m "$(date +'update: %m-%d-Y %H:%M:%S')"
         
         - name: Push changes
           uses: ad-m/github-push-action@master
