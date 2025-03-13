@@ -34,10 +34,11 @@ jobs:
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
             git checkout -B web
+            git pull
             rm -rf *
             cp -r /tmp/dist/* .
             git add -A
-            git commit -m "update: $(date +%m-%d-Y %H:%M:%S)"
+            git commit -m "update: $(date '+%m-%d-Y %H:%M:%S')"
         
         - name: Push changes
           uses: ad-m/github-push-action@master
