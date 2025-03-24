@@ -39,17 +39,27 @@
     }
   }
 
-  #content {
+  .post-content {
     margin-inline: 1rem;
+    flex: 1;
+    display: flex;
   }
 
   .published {
     color: #aaa;
     margin: 2rem;
   }
+
+  .post-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
 </style>
 
-<div id="content"><p>Olá pessoal, ontem tive um pequeno problema na hora de usar cache em memória no <a href="https://sanic.dev" target="_blank">Sanic</a> pra aumentar a velocidade de respostas da minha API, eu não estava conseguindo encontrar material na internet em geral e nem na documentação sobre como fazer isso, então resolvi criar minha própria implementação, e isso me trouxe a fazer a postagem de hoje, espero que gostem.</p>
+<div class="center post-content">
+  <div style="max-width: 64rem;">
+    <h2 class="center post-title">Decoradores em Python</h2>
+    <p>Olá pessoal, ontem tive um pequeno problema na hora de usar cache em memória no <a href="https://sanic.dev" target="_blank">Sanic</a> pra aumentar a velocidade de respostas da minha API, eu não estava conseguindo encontrar material na internet em geral e nem na documentação sobre como fazer isso, então resolvi criar minha própria implementação, e isso me trouxe a fazer a postagem de hoje, espero que gostem.</p>
 
 <h2 id="o-que-é-um-decorador">O que é um decorador?</h2>
 
@@ -139,6 +149,8 @@
 <p>Veja que na segunda execução ele já não tem mais a demora de 2 segundos que na primeira vez, isso é porque guardamos a informação de que era primeira execução em uma variável no escopo do decorador, que não é executado toda vez que a função é chamada, apenas em sua criação.</p>
 
 <p>É isso! Espero que tenham gostado e obrigado por ler ate aqui ;)</p>
+
+  </div>
 </div>
 <div class="published center">Publicado em: 14/02/2022</div>
   </main>

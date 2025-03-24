@@ -22,25 +22,53 @@
     </div>
   </header>
   <main class="root">
-    <div class="center">
-  
+    <style>
+  .post-list {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-item {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .post-title {
+    margin: 1rem;
+  }
+
+  .post-date {
+    color: var(--link-normal-color);
+    font-size: 1.3rem;
+  }
+</style>
+
+<div class="center post-list">
+  <div>
     
-      <a href='/posts/install-opl-linux.html'>
-        <h3>\[Linux\] Instalação do OPL no PCSX2</h3>
-        <span>21/06/2024</span>
-      </div>
     
-      <a href='/posts/linux-zram.html'>
-        <h3>[Linux] Configurando ZRAM para compactação de memória</h3>
-        <span>28/11/2022</span>
-      </div>
+    <a class="post-item" href='/posts/install-opl-linux.html'>
+      <h3 class="post-title">[Linux] Instalação do OPL no PCSX2</h3>
+      <span class="post-date">21/06/2024</span>
+    </a>
     
-      <a href='/posts/python-decorators.html'>
-        <h3>Decoradores em Python</h3>
-        <span>14/02/2022</span>
-      </div>
+    <a class="post-item" href='/posts/linux-zram.html'>
+      <h3 class="post-title">[Linux] Configurando ZRAM para compactação de memória</h3>
+      <span class="post-date">28/11/2022</span>
+    </a>
     
-  
+    <a class="post-item" href='/posts/python-decorators.html'>
+      <h3 class="post-title">Decoradores em Python</h3>
+      <span class="post-date">14/02/2022</span>
+    </a>
+    
+    
+  </div>
 </div>
   </main>
   <footer class="footer">

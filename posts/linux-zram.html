@@ -39,17 +39,27 @@
     }
   }
 
-  #content {
+  .post-content {
     margin-inline: 1rem;
+    flex: 1;
+    display: flex;
   }
 
   .published {
     color: #aaa;
     margin: 2rem;
   }
+
+  .post-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
 </style>
 
-<div id="content"><p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem &ldquo;reduzir&rdquo; o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
+<div class="center post-content">
+  <div style="max-width: 64rem;">
+    <h2 class="center post-title">[Linux] Configurando ZRAM para compactação de memória</h2>
+    <p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem &ldquo;reduzir&rdquo; o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
 
 <p>Esté tutorial foi testado no Debian 11(Bullseye), e provavelmente vai funcionar em qualquer distro baseada nele(Ubuntu e seus derivados por exemplo), vamos começar :)</p>
 
@@ -89,6 +99,8 @@
 <li><a href="https://wiki.debian.org/ZRam" target="_blank">ZRam Debian wiki</a></li>
 <li><a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html" target="_blank">ZRam linux documentation</a></li>
 </ul>
+
+  </div>
 </div>
 <div class="published center">Publicado em: 28/11/2022</div>
   </main>
