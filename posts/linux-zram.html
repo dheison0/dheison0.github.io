@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Bora economizar memória e tempo de execução no nosso querido penguim? ZRAM é uma ótima forma de aproveitar o processamento sobrando para liberar memória através da compactação.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/favicon.svg" />
+  <title>[Linux] Configurando ZRAM para compactação de memória</title>
+  <link async rel="stylesheet" href="/assets/style.css" />
+</head>
+
+<body>
+  <header class="header-bar">
+    <a href="/" class="main-link">
+      <img src="/assets/favicon.svg">
+      <h1>Dheison Gomes</h1>
+    </a>
+    <div class="menu">
+      <a href="posts.html">Postagens</a>
+      <a href="contact.html">Contatos</a>
+    </div>
+  </header>
+  <main class="root">
+    <style>
+  pre {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  pre span {
+    color: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    pre {
+      border: 0.5rem solid var(--project-hover);
+    }
+  }
+
+  #content {
+    margin-inline: 1rem;
+  }
+
+  .published {
+    color: #aaa;
+    margin: 2rem;
+  }
+</style>
+
+<div id="content"><p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem &ldquo;reduzir&rdquo; o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
+
+<p>Esté tutorial foi testado no Debian 11(Bullseye), e provavelmente vai funcionar em qualquer distro baseada nele(Ubuntu e seus derivados por exemplo), vamos começar :)</p>
+
+<p>Primeiramente é preciso instalar o pacote <code>zram-tools</code> então rode o seguinte comando no seu terminal:</p>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install zram-tools
+</span></span></code></pre>
+<p>Agora temos que configurar qual o algoritmo que vai ser usado para  compactar os dados e quantos MB de dados vão poder ser compactados, pra isso temos que editar o arquivo <code>/etc/default/zramswap</code> e definir os valores a seguir:</p>
+
+<ul>
+<li><code>ALGO</code> - Algoritmo a ser usado</li>
+<li><code>SIZE</code> - Tamanho máximo dos dados compactados</li>
+</ul>
+
+<p>Como algoritmos para escolher temos por ordem de compactação:</p>
+
+<p>zstd &gt; lzo &gt; lz4</p>
+
+<p>E por ordem de velocidade:</p>
+
+<p>lz4 &gt; zstd &gt; lzo</p>
+
+<p>Portando aqui vamos usar o algoritmo zstd que une o melhor dos dois mundos, então temos que colocar as chaves e valores no arquivo da seguinte forma:</p>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>ALGO=zstd
+</span></span><span style="display:flex;"><span>SIZE=2048  # Escolhi um tamanho de 2GB
+</span></span></code></pre>
+<p>Agora é só reiniciar o sistema e aproveitar!</p>
+
+<p>Para verificar o uso da zram você pode usar o comando:</p>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>zramctl
+</span></span></code></pre>
+<p>Obrigado por ler e ate a próxima!!</p>
+
+<p>Links que podem ser úteis:</p>
+
+<ul>
+<li><a href="https://wiki.debian.org/ZRam" target="_blank">ZRam Debian wiki</a></li>
+<li><a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html" target="_blank">ZRam linux documentation</a></li>
+</ul>
+</div>
+<div class="published center">Publicado em: 28/11/2022</div>
+  </main>
+  <footer class="footer">
+    Todos os direitos reservados © Dheison Gomes
+  </footer>
+</body>
+
+</html>
