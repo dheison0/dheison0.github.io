@@ -15,15 +15,27 @@
     }
   }
 
-  #content {
+  .post-content {
     margin-inline: 1rem;
+    flex: 1;
+    display: flex;
   }
 
   .published {
     color: #aaa;
     margin: 2rem;
   }
+
+  .post-title {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
 </style>
 
-<div id="content">{{.Content}}</div>
+<div class="center post-content">
+  <div style="max-width: 64rem;">
+    <h2 class="center post-title">{{.Title}}</h2>
+    {{.Content}}
+  </div>
+</div>
 <div class="published center">Publicado em: {{.Date}}</div>

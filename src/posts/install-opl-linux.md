@@ -1,5 +1,5 @@
 ---
-title: \[Linux\] Instalação do OPL no PCSX2
+title: "[Linux] Instalação do OPL no PCSX2"
 description: Uma forma rápida de instalação do Open PS2 Loader no linux através do PCSX2 para testar seus temas ou sistemas criados para essa bela ferramenta.
 date: 21/06/2024
 ---

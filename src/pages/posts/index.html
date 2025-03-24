@@ -1,12 +1,40 @@
-<div class="center">
-  {{ if .Items }}
+<style>
+  .post-list {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-item {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .post-title {
+    margin: 1rem;
+  }
+
+  .post-date {
+    color: var(--link-normal-color);
+    font-size: 1.3rem;
+  }
+</style>
+
+<div class="center post-list">
+  <div>
+    {{ if .Items }}
     {{ range .Items }}
-      <a href='/posts/{{ index . "path" }}'>
-        <h3>{{ index . "title" }}</h3>
-        <span>{{ index . "date" }}</span>
-      </div>
+    <a class="post-item" href='/posts/{{ index . "path" }}'>
+      <h3 class="post-title">{{ index . "title" }}</h3>
+      <span class="post-date">{{ index . "date" }}</span>
+    </a>
     {{ end }}
-  {{ else }}
+    {{ else }}
     <span>Nenhuma postagem ainda!</span>
-  {{ end }}
+    {{ end }}
+  </div>
 </div>
