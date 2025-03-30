@@ -27,6 +27,8 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 0.5rem;
+    display: block;
+    overflow-x: scroll;
   }
 
   pre span {
@@ -74,30 +76,30 @@
 <h2 id="instalar-o-pcsx2">Instalar o PCSX2</h2>
 
 <p>[Obs: Isto não é para todos os sistemas] No Debian 12 é preciso fazer a ativação do suporte a 32bits caso seu sistema seja de 64bit, para isso rode os seguintes comandos:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo dpkg --add-architecture i386
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo dpkg --add-architecture i386
 </span></span><span style="display:flex;"><span>sudo apt update
 </span></span></code></pre>
 <p>Com isso você já tem os repositórios com suporte a 32bit e agora pode instalar o PCSX2, rode o comando:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt install pcsx2
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt install pcsx2
 </span></span></code></pre>
 <p>Só aguardar!</p>
 
 <h2 id="baixar-o-usbqemu-whell">Baixar o USBQemu Whell</h2>
 
 <p>Para fazer o download você deve visitar a <a href="https://github.com/jackun/USBqemu-wheel/releases" target="_blank">página de lançamentos</a> no Github e baixar a versão mais nova suportado pelo seu sistema, no meu caso é a <code>0.10.0</code> e na versão do Debian, existe uma para Ubuntu caso seu sistema seja baseado nele, depois disso instale o pacote usando o APT:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt install ~/Downloads/libusbqemu*.deb
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt install ~/Downloads/libusbqemu*.deb
 </span></span></code></pre>
 <h2 id="criar-e-formatar-um-disco-virtual">Criar e formatar um disco virtual</h2>
 
 <p>Escolhe o local onde deseja criar um arquivo que conterá os jogos e crie-o com o tamanho do disco desejado, eu uso o <code>fallocate</code> para isso, um exemplo:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#6272a4"># Cria um arquivo de 32GB</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#6272a4"># Cria um arquivo de 32GB</span>
 </span></span><span style="display:flex;"><span>fallocate -l 32G usb.img
 </span></span></code></pre>
 <p>Com o arquivo criado agora é preciso formata-lo usando o tipo de partição FAT, use o seguinte comando:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>mkfs.fat usb.img
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>mkfs.fat usb.img
 </span></span></code></pre>
 <p>Esse comando vai rodar rapidamente e seu disco já estará pronto para ser montado, eu uso o comando <code>mount</code> para isso já que o Gnome Disks sempre monta os discos que crio manualmente no modo somante leitura, um exemplo de montagem:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>mkdir ps2
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>mkdir ps2
 </span></span><span style="display:flex;"><span><span style="color:#6272a4"># Monta o arquivo usb.img na pasta ps2</span>
 </span></span><span style="display:flex;"><span>mount -o loop usb.img ps2
 </span></span></code></pre>

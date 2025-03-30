@@ -27,6 +27,8 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 0.5rem;
+    display: block;
+    overflow-x: scroll;
   }
 
   pre span {
@@ -76,7 +78,7 @@
 <h3 id="decorador-simples">Decorador simples</h3>
 
 <p>O decorador simples é apenas uma closure com uma função de resposta marcada como &ldquo;embrulho&rdquo;, a definição é dada usando uma função normal que recebe a função desenvolvida pelo usúario como argumento e dentro dessa função principal é definida outra usando o decorador que marca ela como &ldquo;embrulho&rdquo;, logo depois essa função marcada é devolvida como resposta da função principal, veja um exemplo:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#6272a4"># Esse é o decorador padrão que marca como &#34;embrulho&#34;</span>
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#6272a4"># Esse é o decorador padrão que marca como &#34;embrulho&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> functools <span style="color:#ff79c6">import</span> wraps
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">meu_decorador</span>(func):
@@ -90,14 +92,14 @@
 <p>Para usar esse tipo de decorador você não pode chamá-lo, apenas marcar, se chamá-lo ira ocorrer um erro por falta do argumento <code>func</code> e não ira funcionar!</p>
 
 <p>Veja um exemplo de uso:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>@meu_decorador
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>@meu_decorador
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">ola</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;Olá, Mundo!&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>ola()
 </span></span></code></pre>
 <p>A execução desse código vai resultar na seguinte saida no terminal:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>Essa função foi embrulhada com o decorador simples
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>Essa função foi embrulhada com o decorador simples
 </span></span><span style="display:flex;"><span>Olá, Mundo!
 </span></span></code></pre>
 <p>Caso ainda duvide de ocorrer um erro se chamar o decorador é só você mesmo testar por ai, use <code>@meu_decorador()</code> no lugar de <code>@meu_decorador</code>.</p>
@@ -111,7 +113,7 @@
 <p>O jeito de fazer esse é praticamente o mesmo, mas você cria uma função que contem o decorador simples e retorna ele como resposta, nessa função você pode definir parâmetros para receber os argumentos. Ao cotrário da anterior, nessa versão você não recebe a função desenvolvida na principal, apenas no decorador que vai ser retornado.</p>
 
 <p>Veja um exemplo de como esse é desenvolvido:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#ff79c6">from</span> functools <span style="color:#ff79c6">import</span> wraps
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span><span style="color:#ff79c6">from</span> functools <span style="color:#ff79c6">import</span> wraps
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> time <span style="color:#ff79c6">import</span> sleep
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">demora</span>(n: <span style="color:#8be9fd;font-style:italic">int</span>):
@@ -132,7 +134,7 @@
 <p>Aqui nós recebemos um argumento <code>n</code> que diz o tempo demorado para a primeira execução da função, e guardamos a informação de se é a primeira execução em uma variável no escopo do decorador que é usada dentro do embrulho, mas para que essa variável seja manipulada é preciso o uso da palavra chave <code>nonlocal</code> já que a variável não é local e nem global, ela esta um escopo acima de onde esta sendo usada. Um detalhe é que qualquer informação que deseje ser permanente deve estar no escopo do decorador, e não no do embrulho.</p>
 
 <p>Agora caso você use esse decorador em uma função, ela ira demorar <code>n</code> segundos para ser executada pela primeira vez e nas posteriores ira executar de imediato, veja mais esse exemplo:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>@demora(<span style="color:#bd93f9">2</span>)
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>@demora(<span style="color:#bd93f9">2</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">ola2</span>(nome: <span style="color:#8be9fd;font-style:italic">str</span>):
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">f</span><span style="color:#f1fa8c">&#34;Olá, </span><span style="color:#f1fa8c">{</span>nome<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">!&#34;</span>)
 </span></span><span style="display:flex;"><span>
@@ -140,7 +142,7 @@
 </span></span><span style="display:flex;"><span>ola2(<span style="color:#f1fa8c">&#34;Maria&#34;</span>)
 </span></span></code></pre>
 <p>Esse código ira resultar na seguinte saída:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>Essa função foi embrulhada pelo decorador que recebe argumentos
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>Essa função foi embrulhada pelo decorador que recebe argumentos
 </span></span><span style="display:flex;"><span>Esperando 2 segundos para que a função seja executada pela primeira vez
 </span></span><span style="display:flex;"><span>Olá, João!
 </span></span><span style="display:flex;"><span>Essa função foi embrulhada pelo decorador que recebe argumentos

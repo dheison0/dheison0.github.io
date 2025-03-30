@@ -27,6 +27,8 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 0.5rem;
+    display: block;
+    overflow-x: scroll;
   }
 
   pre span {
@@ -64,7 +66,7 @@
 <p>Esté tutorial foi testado no Debian 11(Bullseye), e provavelmente vai funcionar em qualquer distro baseada nele(Ubuntu e seus derivados por exemplo), vamos começar :)</p>
 
 <p>Primeiramente é preciso instalar o pacote <code>zram-tools</code> então rode o seguinte comando no seu terminal:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt update
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>sudo apt update
 </span></span><span style="display:flex;"><span>sudo apt install zram-tools
 </span></span></code></pre>
 <p>Agora temos que configurar qual o algoritmo que vai ser usado para  compactar os dados e quantos MB de dados vão poder ser compactados, pra isso temos que editar o arquivo <code>/etc/default/zramswap</code> e definir os valores a seguir:</p>
@@ -83,13 +85,13 @@
 <p>lz4 &gt; zstd &gt; lzo</p>
 
 <p>Portando aqui vamos usar o algoritmo zstd que une o melhor dos dois mundos, então temos que colocar as chaves e valores no arquivo da seguinte forma:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>ALGO=zstd
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>ALGO=zstd
 </span></span><span style="display:flex;"><span>SIZE=2048  # Escolhi um tamanho de 2GB
 </span></span></code></pre>
 <p>Agora é só reiniciar o sistema e aproveitar!</p>
 
 <p>Para verificar o uso da zram você pode usar o comando:</p>
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>zramctl
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="display:flex;"><span>zramctl
 </span></span></code></pre>
 <p>Obrigado por ler e ate a próxima!!</p>
 
