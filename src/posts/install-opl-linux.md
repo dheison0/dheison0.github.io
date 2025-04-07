@@ -8,7 +8,7 @@ Olá! Esses dias estava precisando de uma forma de emular o Play Station 2 no me
 
 ## Passos
 
-1. [Instalar o PCSX2](#Instalar%20o%20PCSX2)
+1. [Instalar o PCSX2](#instalar-o-pcsx2)
 2. [Baixar o USBQemu Whell](#Baixar%20o%20USBQemu%20Whell)
 3. [Criar e formatar um disco virtual](#Criar%20e%20formatar%20um%20disco%20virtual)
 4. [Configurar o USBQemu Whell](#Configurar%20o%20USBQemu%20Whell)
