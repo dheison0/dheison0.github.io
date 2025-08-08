@@ -79,6 +79,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .about {
@@ -114,6 +115,23 @@ body {
   padding-left: 0.5rem;
   border-left: var(--borders) solid 0.3rem;
   border-radius: 0.5rem;
+}
+
+.tools {
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.scrolling-tools {
+  flex-wrap: wrap;
+  max-width: 36rem;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tool-img {
+  width: 3rem;
+  filter: var(--social-icon-filter);
 }
 
 .social {
@@ -158,9 +176,18 @@ body {
 }
 
 .footer-bar {
+  flex-wrap: wrap;
   text-align: center;
   font-size: 1.1rem;
   padding: 1rem;
+}
+
+.footer-bar span {
+  margin-inline: 1rem;
+}
+
+.footer-bar a {
+  opacity: 85%;
 }
 
 .footer-bar a:hover {
