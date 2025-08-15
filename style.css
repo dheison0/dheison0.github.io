@@ -130,8 +130,14 @@ body {
 }
 
 .tool-img {
+  transition: all;
+  transition-duration: 200ms;
   width: 3rem;
   filter: var(--social-icon-filter);
+}
+
+.tool-img:hover {
+  opacity: 50%;
 }
 
 .social {
@@ -161,18 +167,18 @@ body {
   border: var(--borders) solid 0.1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+.social-link:hover {
+  background-color: var(--social-icon-hover);
 }
 
 .social-icon {
   width: 1.7rem;
   margin-right: 0.75rem;
   filter: var(--social-icon-filter);
-}
-
-.social-link:hover {
-  background-color: var(--social-icon-hover);
-  transition: all;
-  transition-duration: 150ms;
 }
 
 .footer-bar {
