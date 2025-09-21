@@ -140,6 +140,50 @@ body {
   opacity: 50%;
 }
 
+.languages {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.languages-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0.4rem;
+  max-width: 24rem;
+  width: 80vw;
+  align-items: center;
+}
+
+.language-name {
+  color: var(--text);
+  width: 30%;
+}
+
+.language-bar {
+  border: var(--borders) solid 0.15rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.pt {
+  background-color: var(--borders);
+  color: var(--background);
+}
+
+.en {
+  background: linear-gradient(to right, var(--borders) 66%, var(--background) 33%);
+  color: var(--background);
+}
+
 .social {
   display: flex;
   flex-direction: column;
