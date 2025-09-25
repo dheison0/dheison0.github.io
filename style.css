@@ -44,21 +44,39 @@
 }
 
 :root {
-  font-size: 16px;
-}
-
-body {
+  font-size: 1rem;
   background-color: var(--background);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .flex-center {
-  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flex,
+.flex-center {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+.subtitle {
+  font-size: 1.75rem;
+}
+
+body {
+  height: 100vh;
+  justify-content: space-between;
 }
 
 .header-bar {
@@ -77,8 +95,6 @@ body {
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 
@@ -95,17 +111,12 @@ body {
   object-fit: cover;
   border-radius: 50%;
   filter: var(--profile-image-filter);
-  box-shadow: 0 0 18px 18px var(--background) inset;
 }
 
 .about-title {
   font-size: 2rem;
   color: var(--about-title);
   margin-bottom: 1rem;
-}
-
-.blinking-cursor {
-  animation: blink 1s infinite;
 }
 
 .about-description {
@@ -118,11 +129,10 @@ body {
 }
 
 .tools {
-  flex-direction: column;
   padding: 1rem;
 }
 
-.scrolling-tools {
+.tools-list {
   flex-wrap: wrap;
   max-width: 36rem;
   gap: 1rem;
@@ -140,29 +150,15 @@ body {
   opacity: 50%;
 }
 
-.languages {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.languages-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .language-item {
-  display: flex;
   flex-direction: row;
-  justify-content: center;
   margin: 0.4rem;
   max-width: 24rem;
   width: 80vw;
-  align-items: center;
+  font-size: 1.1rem;
 }
 
 .language-name {
-  color: var(--text);
   width: 30%;
 }
 
@@ -170,7 +166,6 @@ body {
   border: var(--borders) solid 0.15rem;
   padding: 0.2rem;
   border-radius: 1rem;
-  flex: 1;
   text-align: center;
 }
 
@@ -185,29 +180,21 @@ body {
 }
 
 .social {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 1rem;
-}
-
-.social-title {
-  font-size: 1.75rem;
 }
 
 .social-link-container {
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 54rem;
+  gap: 1rem;
 }
 
 .social-link {
-  text-align: center;
   font-size: 1.25rem;
   font-weight: semibold;
-  padding-inline: 6rem;
-  padding-block: 1rem;
-  margin: 0.4rem;
+  padding: 1rem 6rem;
   border: var(--borders) solid 0.1rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -230,6 +217,7 @@ body {
   text-align: center;
   font-size: 1.1rem;
   padding: 1rem;
+  margin: 1rem;
 }
 
 .footer-bar span {

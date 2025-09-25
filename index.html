@@ -11,12 +11,12 @@
   <link async rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="flex flex-col">
   <header class="header-bar flex-center">
     <img src="/images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
     <span class="header-name">Dheison Gomes</span>
   </header>
-  <main class="content">
+  <main class="content flex flex-col">
     <div class="about flex-center">
       <div class="flex-center">
         <img src="/images/profile.webp" alt="Foto de perfil" class="profile-image">
@@ -24,7 +24,7 @@
       <div class="about-secondary">
         <h2 class="about-title">
           &gt; whois "Dheison Gomes"
-          <span class="blinking-cursor">_</span>
+          <span class="blink">_</span>
         </h2>
         <div class="about-description">
           <span>
@@ -37,72 +37,54 @@
         </div>
       </div>
     </div>
-    <div class="tools flex-center">
-      <h2>&gt; Ferramentas</h2>
-      <ul class="flex-center scrolling-tools">
-        <li class="scrolling-tool">
-          <a href="https://www.python.org">
-            <img src="images/tools/python.svg" alt="Linguagem de programação Python" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://go.dev">
-            <img src="images/tools/go.svg" alt="Linguagem de programação Go" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-            <img src="images/tools/javascript.svg" alt="Linguagem de programação JavaScript" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://www.typescriptlang.org">
-            <img src="images/tools/typescript.svg" alt="Linguagem de programação TypeScript" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://www.kernel.org">
-            <img src="images/tools/linux.svg" alt="Sistemas operacionais baseados em Linux" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://www.docker.com">
-            <img src="images/tools/docker.svg" alt="Sistema de containers Docker" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://react.dev">
-            <img src="images/tools/reactjs.svg" alt="Ferramenta de interface de usuário reativa, ReactJS"
-              class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://www.lua.org">
-            <img src="images/tools/lua.svg" alt="Linguagem de programação Lua" class="tool-img" />
-          </a>
-        </li>
-        <li class="scrolling-tool">
-          <a href="https://www.gnu.org/software/bash">
-            <img src="images/tools/bash.svg" alt="Linguagem de programação Bash" class="tool-img" />
-          </a>
-        </li>
-      </ul>
+    <div class="tools flex flex-col flex-center">
+      <h2 class="subtitle">&gt; Ferramentas</h2>
+      <div class="flex-center tools-list">
+        <a href="https://www.python.org">
+          <img src="images/tools/python.svg" alt="Linguagem de programação Python" class="tool-img" />
+        </a>
+        <a href="https://go.dev">
+          <img src="images/tools/go.svg" alt="Linguagem de programação Go" class="tool-img" />
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+          <img src="images/tools/javascript.svg" alt="Linguagem de programação JavaScript" class="tool-img" />
+        </a>
+        <a href="https://www.typescriptlang.org">
+          <img src="images/tools/typescript.svg" alt="Linguagem de programação TypeScript" class="tool-img" />
+        </a>
+        <a href="https://www.kernel.org">
+          <img src="images/tools/linux.svg" alt="Sistemas operacionais baseados em Linux" class="tool-img" />
+        </a>
+        <a href="https://www.docker.com">
+          <img src="images/tools/docker.svg" alt="Sistema de containers Docker" class="tool-img" />
+        </a>
+        <a href="https://react.dev">
+          <img src="images/tools/reactjs.svg" alt="Ferramenta de interface de usuário reativa, ReactJS"
+            class="tool-img" />
+        </a>
+        <a href="https://www.lua.org">
+          <img src="images/tools/lua.svg" alt="Linguagem de programação Lua" class="tool-img" />
+        </a>
+        <a href="https://www.gnu.org/software/bash">
+          <img src="images/tools/bash.svg" alt="Linguagem de programação Bash" class="tool-img" />
+        </a>
+      </div>
     </div>
-    <div class="languages flex-center">
-      <h2 class="languages-title">&gt; Idiomas</h2>
-      <ul class="languages-container">
-        <li class="language-item">
+    <div class="flex flex-col flex-center">
+      <h2 class="subtitle">&gt; Idiomas</h2>
+      <ul class="flex flex-col">
+        <li class="language-item flex-center">
           <span class="language-name">Português</span>
-          <div class="language-bar pt">Nativo</div>
+          <div class="language-bar flex-1 pt">Nativo</div>
         </li>
-        <li class="language-item">
+        <li class="language-item flex-center">
           <span class="language-name">Inglês</span>
-          <div class="language-bar en">B2</div>
+          <div class="language-bar flex-1 en">B2</div>
         </li>
       </ul>
     </div>
-    <div class="social">
-      <h2 class="social-title">&gt; Contatos</h2>
+    <div class="social flex flex-col">
+      <h2 class="subtitle">&gt; Contatos</h2>
       <ul class="social-link-container flex-center">
         <li>
           <a class="social-link flex-center" href="https://wa.me/5589981213209">
@@ -152,7 +134,6 @@
               class="social-icon" />
             TabNews
           </a>
-        </li>
         </li>
       </ul>
     </div>
