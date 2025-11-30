@@ -3,7 +3,7 @@ import shutil
 from os import path
 from time import strptime
 
-from markdown import markdown
+from mistletoe import markdown
 
 BASE_DIR = path.dirname(path.abspath(__file__))
 SRC_DIR = path.join(BASE_DIR, "src")
@@ -31,7 +31,10 @@ for filename in os.listdir(POSTS_DIR):
     }
     config["file"] = path.join(OUT_DIR, "posts", filename.replace(".md", ".html"))
     content = "---".join(data_slices[2:]).strip()
-    result = template.format(**config, content=markdown(content))
+    result = template.format(
+        **config,
+        content=markdown(content),
+    )
     out_file = open(config["file"], "w")
     out_file.write(result)
     out_file.close()

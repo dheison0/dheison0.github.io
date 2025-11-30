@@ -8,12 +8,38 @@
   border-radius: 0.65rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-block: 0.5rem;
+}
+
 .flex-1 {
   flex: 1;
 }
 
 code {
+  display: inline-block;
+  padding-block: 0.15rem;
+  padding-inline: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: darkslategrey;
+  margin: 0.1rem;
+}
+
+@media (prefers-color-scheme: light) {
+
+  pre,
+  code {
+    color: var(--background);
+  }
+}
+
+pre {
   display: block;
+  margin: 0.7rem;
 }
 
 .post-title {
