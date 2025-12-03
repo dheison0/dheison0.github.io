@@ -234,3 +234,17 @@ body {
   cursor: pointer;
   transition: all;
 }
+
+.blog-link {
+  color: var(--about-title);
+  border: var(--borders) solid 0.15rem;
+  border-radius: 0.5rem;
+  padding: 1rem 6rem;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+.blog-link:hover {
+  background-color: var(--social-icon-hover);
+}
