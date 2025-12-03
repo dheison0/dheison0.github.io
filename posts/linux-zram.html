@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprenda a aproveitar o poder de processamento do seu PC para aumentar a capacidade de RAM do seu sistema!">
+  <title>[Linux] Configurando compactação de memória</title>
+  <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/posts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+  <link rel="stylesheet" href="../css/dracula.css">
+</head>
+
+<body class="flex flex-col">
+  <header class="header-bar flex-center">
+    <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
+    <span class="header-name">Dheison Gomes</span>
+  </header>
+  <main class="content flex flex-1 flex-col">
+    <h2 class="post-title">[Linux] Configurando compactação de memória</h2>
+    <span class="post-date">Data de publicação: 18:40 - 28/11/2022</span>
+    <div class="post-content"><p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem "reduzir" o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
+<p>Esté tutorial foi testado no Debian 11(Bullseye), e provavelmente vai funcionar em qualquer distro baseada nele(Ubuntu e seus derivados por exemplo), vamos começar :)</p>
+<p>Primeiramente é preciso instalar o pacote <code>zram-tools</code> então rode o seguinte comando no seu terminal:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install zram-tools
+</code></pre>
+<p>Agora temos que configurar qual o algoritmo que vai ser usado para  compactar os dados e quantos MB de dados vão poder ser compactados, pra isso temos que editar o arquivo <code>/etc/default/zramswap</code> e definir os valores a seguir:</p>
+<ul>
+<li><code>ALGO</code> - Algoritmo a ser usado</li>
+<li><code>SIZE</code> - Tamanho máximo dos dados compactados</li>
+</ul>
+<p>Como algoritmos para escolher temos por ordem de compactação:</p>
+<p>zstd &gt; lzo &gt; lz4</p>
+<p>E por ordem de velocidade:</p>
+<p>lz4 &gt; zstd &gt; lzo</p>
+<p>Portando aqui vamos usar o algoritmo zstd que une o melhor dos dois mundos, então temos que colocar as chaves e valores no arquivo da seguinte forma:</p>
+<pre><code class="language-text">ALGO=zstd
+SIZE=2048  # Escolhi um tamanho de 2GB
+</code></pre>
+<p>Agora é só reiniciar o sistema e aproveitar!</p>
+<p>Para verificar o uso da zram você pode usar o comando:</p>
+<pre><code class="language-bash">zramctl
+</code></pre>
+<p>Obrigado por ler e ate a próxima!!</p>
+<p>Links que podem ser úteis:</p>
+<ul>
+<li><a href="https://wiki.debian.org/ZRam">ZRam Debian wiki</a></li>
+<li><a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html">ZRam linux documentation</a></li>
+</ul>
+</div>
+  </main>
+  <footer class="footer-bar flex-center">
+    <span>Feito por <a href="https://github.com/dheison0/dheison0.github.io">Dheison Gomes!</a></span>
+    <span>Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
