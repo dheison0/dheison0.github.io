@@ -1,0 +1,40 @@
+.content {
+  width: 92%;
+  max-width: 50rem;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-item {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+  border-bottom: 0.15rem solid var(--borders);
+  padding: 0.5rem;
+  transition: all;
+  transition-duration: 180ms;
+}
+
+.post-item:hover {
+  background-color: var(--borders);
+}
+
+.post-title {
+  font-size: 1rem;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  min-width: 9rem;
+  border-left: 0.1rem solid var(--borders);
+  text-align: center;
+}
