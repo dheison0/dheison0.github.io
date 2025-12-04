@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nesta pequena postagem irei ensina-lo a instalar nosso querido OPL no PCSX2 para fins de testes e desenvolvimento.">
+  <title>[Linux] Instalação do OPL no PCSX2</title>
+  <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/posts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+  <link rel="stylesheet" href="../css/dracula.css">
+</head>
+
+<body class="flex flex-col">
+  <header class="header-bar flex-center">
+    <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
+    <span class="header-name">Dheison Gomes</span>
+  </header>
+  <main class="content flex flex-1 flex-col">
+    <h2 class="post-title">[Linux] Instalação do OPL no PCSX2</h2>
+    <span class="post-date">Data de publicação: 08:21 - 21/06/2024</span>
+    <div class="post-content"><p>Olá! Esses dias estava precisando de uma forma de emular o Play Station 2 no meu sistema Linux para poder dar continuidade no desenvolvimento do <a href="https://github.com/dheison0/ps2-game-manager">PS2 Game Manager</a>, acabei encontrando um tutorial no YouTube mas não era tão bom assim e os links não funcionam, então resolvi fazer um também porem acabei descobrindo que sou péssimo nisso além de não ter equipamento adequado, dai tirei a ideia de escrever um artigo aqui no TabNews, espero que gostem!</p>
+<h2>Passos</h2>
+<ul>
+<li><a href="#passos">Passos</a></li>
+<li><a href="#instalar-o-pcsx2">Instalar o PCSX2</a></li>
+<li><a href="#baixar-o-usbqemu-whell">Baixar o USBQemu Whell</a></li>
+<li><a href="#criar-e-formatar-um-disco-virtual">Criar e formatar um disco virtual</a></li>
+<li><a href="#configurar-o-usbqemu-whell">Configurar o USBQemu Whell</a></li>
+<li><a href="#formatar-os-cart%C3%B5es-de-mem%C3%B3ria-e-testar-o-opl">Formatar os cartões de memória e testar o OPL</a></li>
+</ul>
+<h2>Instalar o PCSX2</h2>
+<p>[Obs: Isto não é para todos os sistemas] No Debian 12 é preciso fazer a ativação do suporte a 32bits caso seu sistema seja de 64bit, para isso rode os seguintes comandos:</p>
+<pre><code class="language-bash">sudo dpkg --add-architecture i386
+sudo apt update
+</code></pre>
+<p>Com isso você já tem os repositórios com suporte a 32bit e agora pode instalar o PCSX2, rode o comando:</p>
+<pre><code class="language-bash">sudo apt install pcsx2
+</code></pre>
+<p>Só aguardar!</p>
+<h2>Baixar o USBQemu Whell</h2>
+<p>Para fazer o download você deve visitar a <a href="https://github.com/jackun/USBqemu-wheel/releases">página de lançamentos</a> no Github e baixar a versão mais nova suportado pelo seu sistema, no meu caso é a <code>0.10.0</code> e na versão do Debian, existe uma para Ubuntu caso seu sistema seja baseado nele, depois disso instale o pacote usando o APT:</p>
+<pre><code class="language-bash">sudo apt install ~/Downloads/libusbqemu*.deb
+</code></pre>
+<h2>Criar e formatar um disco virtual</h2>
+<p>Escolhe o local onde deseja criar um arquivo que conterá os jogos e crie-o com o tamanho do disco desejado, eu uso o <code>fallocate</code> para isso, um exemplo:</p>
+<pre><code class="language-bash"># Cria um arquivo de 32GB
+fallocate -l 32G usb.img
+</code></pre>
+<p>Com o arquivo criado agora é preciso formata-lo usando o tipo de partição FAT, use o seguinte comando:</p>
+<pre><code class="language-bash">mkfs.fat usb.img
+</code></pre>
+<p>Esse comando vai rodar rapidamente e seu disco já estará pronto para ser montado, eu uso o comando <code>mount</code> para isso já que o Gnome Disks sempre monta os discos que crio manualmente no modo somante leitura, um exemplo de montagem:</p>
+<pre><code class="language-bash">mkdir ps2
+# Monta o arquivo usb.img na pasta ps2
+mount -o loop usb.img ps2
+</code></pre>
+<p>Agora é só instalar seus jogos(vai precisar rodar o instalador como root) e desmontar o disco para prosseguir</p>
+<h2>Configurar o USBQemu Whell</h2>
+<p>Daqui em diante as configurações serão feitas usando o emulador, então vamos abri-lo e clicar em "Next" até chegar na página de configuração dos plugins, onde você deverá selecionar o <code>Qemu USB Driver</code> na opção <code>USB</code> para que possamos emular o disco virtual</p>
+<p><img src="https://i.imgur.com/cWGuW8d.png" alt="Janela de configuração inicial mostrando as opções de plugins" /></p>
+<p>Depois de selecionado, clique em "Configure" ao lado da escolha de plugin USB e em Player 1 e 2 na sessão "Select Device Type" selecione "Mass Storage Device" em ambos os players, em seguida no "Select Device API" ao lado do "Player 1" clique em "Configure" e "Browser" na janela que aparecer, agora procure e escolha o arquivo de armazenamento virtual que foi criado anteriormente</p>
+<p><img src="https://i.imgur.com/38U7QRK.png" alt="Janela de configuração do Qemu USB Driver" /></p>
+<p>Confirme as duas janelas clicando em "OK" e prossiga com a configuração normal do PCSX2</p>
+<h2>Formatar os cartões de memória e testar o OPL</h2>
+<p>Depois de tudo feito basta apenas configurar os controles e formatar os cartões de memória do emulador, para isso desative o CD/DVD indo em "CDVD &gt; No Disk", inicialize a BIOS e faça a configuração normalmente, on final vá em "Browser" e formate os dois cartões de memória, pronto, agora é só rodar o OPL</p>
+<p>Baseado nos meus testes, o OPL 1.10 não funciona o dispositivo de disco USB emulado do PCSX2 então vamos usar a 1.20(beta no momento) ou inferior a 1.10, entre na <a href="https://github.com/ps2homebrew/Open-PS2-Loader/releases">página de lançamentos do OPL</a> e escolha a versão que desejar, em seguida descompacte o arquivo ELF do programa e no PCSX2 vá em "System &gt; Run ELF" para dar boot usando o arquivo do OPL, configure-o da forma que desejar e é só correr pro abraço, a instalação está concluida!</p>
+<p><img src="https://i.imgur.com/xvoTdBV.png" alt="OPL rodando no emulador com o jogo &quot;7 Wonders of the Ancient World&quot; instado e com capa" /></p>
+<p>Obrigado por ter lido até aqui, espero ter ajudado e ate a próxima!</p>
+</div>
+  </main>
+  <footer class="footer-bar flex-center">
+    <span>Feito por <a href="https://github.com/dheison0/dheison0.github.io">Dheison Gomes!</a></span>
+    <span>Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
