@@ -46,3 +46,25 @@ pre {
   font-size: 2.4rem;
   color: var(--text);
 }
+
+.post-content>ul,
+.post-content>ol {
+  padding-inline: 3rem;
+}
+
+.post-content>ul>li {
+  list-style: circle;
+}
+
+.post-content>ol>li {
+  list-style: decimal;
+}
+
+.post-content a {
+  color: var(--about-title);
+  text-decoration: underline;
+}
+
+.post-content a:hover {
+  color: var(--borders);
+}
