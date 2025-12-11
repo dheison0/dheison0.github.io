@@ -8,17 +8,17 @@
   <title>{post.title}</title>
   <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
 
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/posts.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/post.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
   <link rel="stylesheet" href="../css/dracula.css">
 </head>
 
 <body class="flex flex-col">
-  <header class="header-bar flex-center">
+  <a href="/" class="header-bar flex-center">
     <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
     <span class="header-name">Dheison Gomes</span>
-  </header>
+  </a>
   <main class="content flex flex-1 flex-col">
     <h2 class="post-title">{post.title}</h2>
     <span class="post-date">Data de publicação: {post.date}</span>
