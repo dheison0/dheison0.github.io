@@ -1,0 +1,145 @@
+.content {
+  gap: 1rem;
+}
+
+.about {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.profile-image {
+  width: 90%;
+  max-width: 18rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-title {
+  font-size: 2rem;
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  max-width: 36rem;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  border-left: var(--container-border-color) solid 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.tools {
+  padding: 1rem;
+}
+
+.tools-list {
+  flex-wrap: wrap;
+  max-width: 36rem;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tool-img {
+  transition: all;
+  transition-duration: 200ms;
+  width: 3rem;
+  filter: var(--social-icon-filter);
+}
+
+.tool-img:hover {
+  opacity: 50%;
+}
+
+.language-item {
+  flex-direction: row;
+  margin: 0.4rem;
+  max-width: 24rem;
+  width: 80vw;
+  font-size: 1.1rem;
+}
+
+.language-name {
+  width: 30%;
+}
+
+.language-bar {
+  border: var(--container-border-color) solid 0.15rem;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.pt {
+  background-color: var(--container-border-color);
+  color: var(--background-color);
+}
+
+.en {
+  background: linear-gradient(to right, var(--container-border-color) 66%, var(--background-color) 33%);
+  color: var(--background-color);
+}
+
+.social {
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-link-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 54rem;
+  gap: 1rem;
+}
+
+.social-link {
+  font-size: 1.25rem;
+  font-weight: semibold;
+  padding: 1rem 6rem;
+  border: var(--container-border-color) solid 0.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+.social-link:hover {
+  background-color: var(--container-hover-color);
+}
+
+.social-icon {
+  width: 1.7rem;
+  margin-right: 0.75rem;
+  filter: var(--social-icon-filter);
+}
+
+
+.blog-link {
+  color: var(--title-color);
+  border: var(--container-border-color) solid 0.15rem;
+  border-radius: 0.5rem;
+  padding: 1rem 6rem;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+.blog-link:hover {
+  background-color: var(--container-hover-color);
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

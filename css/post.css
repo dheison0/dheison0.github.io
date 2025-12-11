@@ -4,20 +4,8 @@
   align-self: center;
   padding: 0.5rem;
   margin: 1rem;
-  border-left: 2px solid var(--borders);
+  border-left: 2px solid var(--container-border-color);
   border-radius: 0.65rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin-block: 0.5rem;
-}
-
-.flex-1 {
-  flex: 1;
 }
 
 code {
@@ -33,7 +21,7 @@ code {
 
   pre,
   code {
-    color: var(--background);
+    color: var(--background-color);
   }
 }
 
@@ -44,12 +32,18 @@ pre {
 
 .post-title {
   font-size: 2.4rem;
-  color: var(--text);
+  color: var(--text-color);
+}
+
+.post-date {
+  color: var(--link-text-color);
+  margin-bottom: 1rem;
 }
 
 .post-content>ul,
 .post-content>ol {
   padding-inline: 3rem;
+  margin-block: 0.3rem;
 }
 
 .post-content>ul>li {
@@ -61,10 +55,12 @@ pre {
 }
 
 .post-content a {
-  color: var(--about-title);
+  color: var(--link-text-color);
   text-decoration: underline;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .post-content a:hover {
-  color: var(--borders);
+  color: var(--link-hover-text-color);
 }
