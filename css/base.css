@@ -3,7 +3,7 @@
     --background-color: whitesmoke;
     --header-hover-color: gainsboro;
     --title-color: black;
-    --text-color: #333;
+    --text-color: #222;
     --link-text-color: #111;
     --link-hover-text-color: darkblue;
     --container-border-color: #333;
@@ -47,7 +47,8 @@ h5 {
 }
 
 :root {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: var(--background-color);
 }
 
