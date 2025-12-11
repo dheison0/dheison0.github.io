@@ -43,6 +43,11 @@ pre {
   margin-bottom: 1rem;
 }
 
+.post-content p {
+  margin-block: 0.7rem;
+  text-align: justify;
+}
+
 .post-content>ul,
 .post-content>ol {
   padding-inline: 3rem;
@@ -66,4 +71,11 @@ pre {
 
 .post-content a:hover {
   color: var(--link-hover-text-color);
+}
+
+.post-content blockquote {
+  padding-inline: 0.5rem;
+  padding-block: 0.2rem;
+  border-left: var(--container-border-color) solid 0.4rem;
+  margin-inline: 1rem;
 }
