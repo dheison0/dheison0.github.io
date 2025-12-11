@@ -19,8 +19,11 @@ code {
 
 @media (prefers-color-scheme: light) {
 
-  pre,
   code {
+    color: var(--background-color);
+  }
+
+  code * {
     color: var(--background-color);
   }
 }
