@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fazendo a instalação de drivers legados no Debian 13 através do repositório do Debian Sid">
+  <title>Instalando os drivers Nvidia 390 no Debian Trixie</title>
+  <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/post.css">
+  <script src="../js/dynamic-css-loader.js"></script>
+</head>
+
+<body class="flex flex-col">
+  <a href="/" class="header-bar flex-center">
+    <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
+    <span class="header-name">Dheison Gomes</span>
+  </a>
+  <main class="content flex flex-1 flex-col">
+    <h2 class="post-title">Instalando os drivers Nvidia 390 no Debian Trixie</h2>
+    <span class="post-date">Data de publicação: 13:45 - 14/02/2026</span>
+    <div class="post-content"><p>Olá pessoal!</p>
+<p>Esses últimos dias eu tive que trocar de interface Linux para uma melhor comodidade - pra não dizer distro hopping - e um dos problemas que sempre enfrento é a necessidade de instalar os drivers antigos da Nvidia já que minha placa de vídeo é uma antiga GT 610 que usa a arquitetura Fermi.</p>
+<p>Pesquisando sobre como eu poderia fazer isso no Debian, eu descobri que existe uma versão do driver disponível para a versão de testes e outra pra versão antiga do sistema, dai eu pensei:</p>
+<blockquote>
+<p><em>E se eu colocar o repositório do Sid no sistemas mas não permitir a atualização dos pacotes usando ele?</em></p>
+</blockquote>
+<p>E deu muito certo, estou escrevendo essa postagem através do Debian 13 Cinnamon usando os drivers legados da Nvidia, então vamos ao que importa: Ensina-los a como fazer isso.</p>
+<h2>Adicionando o repositório do Sid</h2>
+<p>Nos precisamos criar um arquivo chamado <code>/etc/apt/sources.list.d/sid.list</code> para que o <code>apt</code> reconheça, o repositório, nesse arquivo nos teremos o seguinte conteúdo:</p>
+<pre><code class="language-text">deb http://deb.debian.org/debian/ sid contrib non-free
+</code></pre>
+<p>Com isso nós já temos os pacotes de teste do Debian, mas antes de qualquer coisa, precisamos bloquear a possibilidade desses pacotes serem instalados encima dos estáveis, então criamos um arquivo <code>/etc/apt/preferences.d/99-pin-unstable</code> com a configuração a seguir:</p>
+<pre><code class="language-yaml">Package: *
+Pin: release a=unstable
+Pin-Priority: 99
+</code></pre>
+<p>Em que:</p>
+<ul>
+<li><code>Package</code> Define os pacotes("*" quer dizer todos)</li>
+<li><code>Pin</code> Diz qual repositório("unstable" é o do "sid")</li>
+<li><code>Pin-Priority</code> É a prioridade dessa regra(maior = mais relevante)</li>
+</ul>
+<p>Agora podemos atualizar a lista de pacotes:</p>
+<pre><code class="language-bash">apt update
+</code></pre>
+<h2>Instalando os drivers</h2>
+<p>Agora faremos a instalação dos drivers e de um pacote que é necessário mas não vem nas dependências:</p>
+<pre><code class="language-bash">sudo apt install \
+  nvidia-legacy-390xx-driver \
+  nvidia-legacy-390xx-opencl-icd `# opcional` \
+  linux-headers-$(uname -r)
+</code></pre>
+<p>Aqui nos estamos instalando os drivers dkms legados, suporte ao OpenCL e os cabeçalhos de desenvolvimento do kernel - que é justamento o que não é mencionado em alguns lugares, mas é preciso dele para conseguirmos usar o modulo dkms.</p>
+<p>O uso do <code>uname -r</code> Aqui é para podermos instalar os cabeçalhos referentes ao kernel em uso no momento de instalação dos drivers, talvez quando ocorrer uma atualização você precise instalar uma versão mais nova dele novamente.</p>
+<p>Após isso ser concluído basta reiniciarmos o sistema e está tudo pronto! Muito obrigado por visitar meu website e espero que tenha gostado, até mais!</p>
+</div>
+  </main>
+  <footer class="footer-bar flex-center">
+    <span>Feito por <a href="https://github.com/dheison0/dheison0.github.io">Dheison Gomes!</a></span>
+    <span>Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span>
+  </footer>
+</body>
+
+</html>
