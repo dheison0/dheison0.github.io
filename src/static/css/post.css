@@ -1,11 +1,7 @@
 .content {
-  width: 94%;
-  max-width: 48rem;
+  width: 92%;
+  max-width: 46rem;
   align-self: center;
-  padding: 0.5rem;
-  margin: 1rem;
-  border-left: 2px solid var(--container-border-color);
-  border-radius: 0.65rem;
 }
 
 code {
@@ -14,7 +10,7 @@ code {
   padding-inline: 0.3rem;
   border-radius: 0.3rem;
   background-color: darkslategrey;
-  margin: 0.1rem;
+  margin: 0.2rem 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -30,7 +26,18 @@ code {
 
 pre {
   display: block;
+  overflow-x: scroll;
   margin: 0.7rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre code {
+  width: 100%;
 }
 
 .post-title {
@@ -45,20 +52,21 @@ pre {
 
 .post-content p {
   margin-block: 0.7rem;
-  text-align: justify;
+  vertical-align: center;
 }
 
 .post-content>ul,
 .post-content>ol {
-  padding-inline: 3rem;
+  padding-inline: 1rem;
   margin-block: 0.3rem;
 }
 
-.post-content>ul>li {
+li {
   list-style: circle;
+  margin-left: 1rem;
 }
 
-.post-content>ol>li {
+.post-content ol>li {
   list-style: decimal;
 }
 
