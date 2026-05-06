@@ -5,6 +5,9 @@ from textwrap import dedent
 from time import strptime
 
 from mistletoe import markdown
+from mistletoe.html_renderer import HtmlRenderer
+from mistletoe.block_token import Heading
+from urllib.parse import quote as urlquote
 
 BASE_DIR = path.dirname(path.abspath(__file__))
 SRC_DIR = path.join(BASE_DIR, "src")
@@ -16,6 +19,19 @@ POST_INDEX_TEMPLATE_FILE = path.join(SRC_DIR, "templates", "post-index.html")
 POST_TEMPLATE = open(POST_TEMPLATE_FILE, "r").read()
 POST_INDEX_TEMPLATE = open(POST_INDEX_TEMPLATE_FILE, "r").read()
 POSTS_DIR = path.join(SRC_DIR, "posts")
+
+
+class CustomRenderer(HtmlRenderer):
+    def __init__(self):
+        super().__init__()
+
+    def render_heading(self, head: Heading):
+        template = '<h{level} class="title-{level}" id="{name}">{inner}</h{level}>'
+        return template.format(
+            name=urlquote(head.children[0].content.strip().lower()),
+            level=head.level,
+            inner=self.render_inner(head)
+        )
 
 
 class Post:
@@ -51,7 +67,7 @@ class Post:
     def render(self) -> str:
         return POST_TEMPLATE.format(
             post=self,
-            content=markdown(self.content),
+            content=markdown(self.content, CustomRenderer),
         )
 
     def write(self):
