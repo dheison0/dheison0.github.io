@@ -28,7 +28,7 @@
 <p><em>E se eu colocar o repositório do Sid no sistemas mas não permitir a atualização dos pacotes usando ele?</em></p>
 </blockquote>
 <p>E deu muito certo, estou escrevendo essa postagem através do Debian 13 Cinnamon usando os drivers legados da Nvidia, então vamos ao que importa: Ensina-los a como fazer isso.</p>
-<h2 class="title-2" id="adicionando%20o%20reposit%C3%B3rio%20do%20sid">Adicionando o repositório do Sid</h2>
+<h2 class="title-2" id="adicionando-o-reposit%C3%B3rio-do-sid">Adicionando o repositório do Sid</h2>
 <p>Nos precisamos criar um arquivo chamado <code>/etc/apt/sources.list.d/sid.list</code> para que o <code>apt</code> reconheça, o repositório, nesse arquivo nos teremos o seguinte conteúdo:</p>
 <pre><code class="language-text">deb http://deb.debian.org/debian/ sid contrib non-free
 </code></pre>
@@ -46,7 +46,7 @@ Pin-Priority: 99
 <p>Agora podemos atualizar a lista de pacotes:</p>
 <pre><code class="language-bash">apt update
 </code></pre>
-<h2 class="title-2" id="instalando%20os%20drivers">Instalando os drivers</h2>
+<h2 class="title-2" id="instalando-os-drivers">Instalando os drivers</h2>
 <p>Agora faremos a instalação dos drivers e de um pacote que é necessário mas não vem nas dependências:</p>
 <pre><code class="language-bash">sudo apt install \
   nvidia-legacy-390xx-driver \
