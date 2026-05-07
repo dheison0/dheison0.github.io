@@ -28,7 +28,7 @@ class CustomRenderer(HtmlRenderer):
     def render_heading(self, head: Heading):
         template = '<h{level} class="title-{level}" id="{name}">{inner}</h{level}>'
         return template.format(
-            name=urlquote(head.children[0].content.strip().lower()),
+            name=urlquote(head.children[0].content.lower().replace(" ", "-")),
             level=head.level,
             inner=self.render_inner(head)
         )
