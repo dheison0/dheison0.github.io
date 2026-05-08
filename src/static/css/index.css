@@ -53,20 +53,26 @@
   opacity: 50%;
 }
 
-.language-item {
+.progress-container {
+  flex-wrap: wrap;
   flex-direction: row;
   margin: 0.4rem;
   max-width: 24rem;
   width: 80vw;
   font-size: 1.1rem;
   gap: 1rem;
+  align-items: center;
 }
 
-.language-name {
-  width: 30%;
+.progress-title {
+  width: 40%;
+  min-width: 8.5rem;
 }
 
-.language-bar {
+.progress-bar {
+  min-width: 10rem;
+  max-width: 17rem;
+  margin: auto;
   border: var(--container-border-color) solid 0.15rem;
   padding: 0.2rem;
   border-radius: 1rem;
@@ -79,8 +85,32 @@
 }
 
 .en {
-  background: linear-gradient(to right, var(--container-border-color) 66%, var(--background-color) 33%);
+  background: linear-gradient(
+    to right,
+    var(--container-border-color) 66%,
+    var(--background-color) 33%
+  );
   color: var(--background-color);
+}
+
+.cs {
+  /* Computer Science */
+  background: linear-gradient(
+    to right,
+    var(--container-border-color) 62%,
+    var(--background-color) 62%
+  );
+  color: var(--background-color);
+}
+
+.ac {
+  /* Accounting Science */
+  background: linear-gradient(
+    to right,
+    var(--container-border-color) 12%,
+    var(--background-color) 12%
+  );
+  color: var(--text-color);
 }
 
 .social {
@@ -115,7 +145,6 @@
   margin-right: 0.75rem;
   filter: var(--social-icon-filter);
 }
-
 
 .blog-link {
   color: var(--title-color);
