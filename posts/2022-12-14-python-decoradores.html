@@ -1,27 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprenda a utilizar uma das funcionalidades mais úteis do python para embrulho de funções." />
+    <title>Decoradores em Python</title>
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprenda a utilizar uma das funcionalidades mais úteis do python para embrulho de funções.">
-  <title>Decoradores em Python</title>
-  <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <script src="../js/dynamic-css-loader.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/post.css">
-  <script src="../js/dynamic-css-loader.js"></script>
-</head>
-
-<body class="flex flex-col">
-  <a href="/" class="header-bar flex-center">
-    <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
-    <span class="header-name">Dheison Gomes</span>
-  </a>
-  <main class="content flex flex-1 flex-col">
-    <h2 class="post-title">Decoradores em Python</h2>
-    <span class="post-date">Data de publicação: 16:46 - 14/12/2022</span>
-    <div class="post-content"><p>Olá pessoal, ontem tive um pequeno problema na hora de usar cache em memória no <a href="https://sanic.dev">Sanic</a> pra aumentar a velocidade de respostas da minha API, eu não estava conseguindo encontrar material na internet em geral e nem na documentação sobre como fazer isso, então resolvi criar minha própria implementação, e isso me trouxe a fazer a postagem de hoje, espero que gostem.</p>
+  <body class="flex flex-col">
+    <a href="/" class="header-bar flex-center">
+      <img
+        src="../images/favicon.svg"
+        alt="Letra D maiúscula sendo a inicial do meu nome"
+        class="header-icon"
+      />
+      <span class="header-name">Dheison Gomes</span>
+    </a>
+    <main class="content flex flex-1 flex-col">
+      <h2 class="post-title">Decoradores em Python</h2>
+      <span class="post-date">Data de publicação: 16:46 - 14/12/2022</span>
+      <div class="post-content"><p>Olá pessoal, ontem tive um pequeno problema na hora de usar cache em memória no <a href="https://sanic.dev">Sanic</a> pra aumentar a velocidade de respostas da minha API, eu não estava conseguindo encontrar material na internet em geral e nem na documentação sobre como fazer isso, então resolvi criar minha própria implementação, e isso me trouxe a fazer a postagem de hoje, espero que gostem.</p>
 <h2 class="title-2" id="o-que-%C3%A9-um-decorador%3F">O que é um decorador?</h2>
 <p>Em poucas palavras: Um decorador é uma função que "embrulha" outra função na hora de sua definição.</p>
 <p>Isto é útil para filtragem de dados de entrada e outras coisas(no meu caso foi armazenamento de um retorno da função para ser usado posteriormente).</p>
@@ -96,10 +106,11 @@ Olá, Maria!
 <p>Veja que na segunda execução ele já não tem mais a demora de 2 segundos que na primeira vez, isso é porque guardamos a informação de que era primeira execução em uma variável no escopo do decorador, que não é executado toda vez que a função é chamada, apenas em sua criação.</p>
 <p>É isso! Espero que tenham gostado e obrigado por ler ate aqui ;)</p>
 </div>
-  </main>
-  <footer class="footer-bar flex-center">
-    <span>Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span>
-  </footer>
-</body>
-
+    </main>
+    <footer class="footer-bar flex-center">
+      <span
+        >Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span
+      >
+    </footer>
+  </body>
 </html>

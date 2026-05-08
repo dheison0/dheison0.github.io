@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -40,6 +40,13 @@
   font-family: "Roboto", sans-serif;
 }
 
+pre,
+pre *,
+code,
+code * {
+  font-family: "Fira Code", monospace !important;
+}
+
 h1,
 h2,
 h3,
@@ -51,7 +58,6 @@ h5 {
 
 :root {
   font-size: 1.05rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: var(--background-color);
 }
 

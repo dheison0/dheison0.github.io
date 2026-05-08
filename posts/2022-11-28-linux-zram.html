@@ -1,27 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprenda a aproveitar o poder de processamento do seu PC para aumentar a capacidade de RAM do seu sistema!" />
+    <title>[Linux] Configurando compactação de memória</title>
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprenda a aproveitar o poder de processamento do seu PC para aumentar a capacidade de RAM do seu sistema!">
-  <title>[Linux] Configurando compactação de memória</title>
-  <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <script src="../js/dynamic-css-loader.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/post.css">
-  <script src="../js/dynamic-css-loader.js"></script>
-</head>
-
-<body class="flex flex-col">
-  <a href="/" class="header-bar flex-center">
-    <img src="../images/favicon.svg" alt="Letra D maiúscula sendo a inicial do meu nome" class="header-icon">
-    <span class="header-name">Dheison Gomes</span>
-  </a>
-  <main class="content flex flex-1 flex-col">
-    <h2 class="post-title">[Linux] Configurando compactação de memória</h2>
-    <span class="post-date">Data de publicação: 18:40 - 28/11/2022</span>
-    <div class="post-content"><p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem "reduzir" o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
+  <body class="flex flex-col">
+    <a href="/" class="header-bar flex-center">
+      <img
+        src="../images/favicon.svg"
+        alt="Letra D maiúscula sendo a inicial do meu nome"
+        class="header-icon"
+      />
+      <span class="header-name">Dheison Gomes</span>
+    </a>
+    <main class="content flex flex-1 flex-col">
+      <h2 class="post-title">[Linux] Configurando compactação de memória</h2>
+      <span class="post-date">Data de publicação: 18:40 - 28/11/2022</span>
+      <div class="post-content"><p>Olá, essa é minha primeira postagem aqui no TabNews e gostaria de ensinar aos usuários de linux iniciantes como podem "reduzir" o consumo de memória, compactando os dados usando uma função que já vem diretamente no núcleo do sistema.</p>
 <p>Esté tutorial foi testado no Debian 11(Bullseye), e provavelmente vai funcionar em qualquer distro baseada nele(Ubuntu e seus derivados por exemplo), vamos começar :)</p>
 <p>Primeiramente é preciso instalar o pacote <code>zram-tools</code> então rode o seguinte comando no seu terminal:</p>
 <pre><code class="language-bash">sudo apt update
@@ -51,10 +61,11 @@ SIZE=2048  # Escolhi um tamanho de 2GB
 <li><a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html">ZRam linux documentation</a></li>
 </ul>
 </div>
-  </main>
-  <footer class="footer-bar flex-center">
-    <span>Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span>
-  </footer>
-</body>
-
+    </main>
+    <footer class="footer-bar flex-center">
+      <span
+        >Ícones obtidos no <a href="https://www.svgrepo.com">SVG Repo.</a></span
+      >
+    </footer>
+  </body>
 </html>
